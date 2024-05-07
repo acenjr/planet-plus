@@ -13,9 +13,9 @@
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",
     "@types/negotiator": "^0.6.3",
-    "@types/node": "20.11.25",
+    "@types/node": "20.12.10",
     "@types/qs": "^6.9.12",
-    "@types/react": "18.2.64",
+    "@types/react": "18.3.1",
     "@types/react-dom": "18.2.21",
     "classnames": "^2.5.1",
     "negotiator": "^0.6.3",
@@ -27,7 +27,7 @@
     "react-markdown": "^9.0.1",
     "react-slideshow-image": "^4.3.0",
     "remark-gfm": "^4.0.0",
-    "typescript": "5.4.2"
+    "typescript": "5.4.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.18",
