@@ -144,7 +144,7 @@ export interface ElementsPlan extends Schema.Component {
       'oneToMany',
       'api::product-feature.product-feature'
     >;
-    honeyPicture: Attribute.Media;
+    picture: Attribute.Media;
   };
 }
 
@@ -368,7 +368,7 @@ export interface SectionsHero extends Schema.Component {
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    description: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
     picture: Attribute.Media & Attribute.Required;
     buttons: Attribute.Component<'links.button-link', true>;
   };

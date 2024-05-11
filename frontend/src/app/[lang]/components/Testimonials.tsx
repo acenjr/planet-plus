@@ -28,7 +28,7 @@ interface TestimonialsProps {
 function Testimonial({ text, authorName, picture }: Readonly<Testimonial>) {
   const imageUrl = getStrapiMedia(picture.data?.attributes.url);
   return (
-    <div className="flex flex-col items-center mx-12 lg:mx-0">
+    <div className="flex flex-col items-center mx-12 lg:mx-0 ">
       <div className="flex items-center">
         <div className="my-6">
           <Image

@@ -22,15 +22,16 @@
       "relation": "oneToMany",
       "target": "api::product-feature.product-feature"
     },
-    "honeyPicture": {
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

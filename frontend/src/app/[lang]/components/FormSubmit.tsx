@@ -46,7 +46,7 @@ export default function FormSubmit({
   }
 
   return (
-    <div className="flex flex-row items-center self-center justify-center flex-shrink-0 shadow-md lg:justify-end">
+    <div className="flex flex-row items-center self-center justify-center flex-shrink-0 shadow-md lg:justify-end bg-green-300">
       <div className="flex flex-col">
         <div className="flex flex-row">
           {successMessage ? (
@@ -60,7 +60,7 @@ export default function FormSubmit({
                 placeholder={errorMessage || placeholder}
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
-                className={"w-3/5 p-3 rounded-l-lg sm:w-2/3 text-gray-700"}
+                className={"w-3/5 p-3 rounded-l-lg sm:w-2/3 text-gray-700 bg-green-200"}
               />
               <button
                 type="button"
