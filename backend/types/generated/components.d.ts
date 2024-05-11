@@ -60,6 +60,17 @@ export interface ElementsFooterSection extends Schema.Component {
   };
 }
 
+export interface ElementsHoneyPicture extends Schema.Component {
+  collectionName: 'components_elements_honey_pictures';
+  info: {
+    displayName: 'honeyPicture';
+    icon: 'eye';
+  };
+  attributes: {
+    honeyPicture: Attribute.Media;
+  };
+}
+
 export interface ElementsLogos extends Schema.Component {
   collectionName: 'components_elements_logos';
   info: {
@@ -70,6 +81,20 @@ export interface ElementsLogos extends Schema.Component {
   attributes: {
     title: Attribute.String;
     logo: Attribute.Media;
+  };
+}
+
+export interface ElementsMissionVision extends Schema.Component {
+  collectionName: 'components_elements_mission_visions';
+  info: {
+    displayName: 'mission-vision';
+    icon: 'book';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+    media: Attribute.Media;
+    description: Attribute.Text;
   };
 }
 
@@ -91,6 +116,17 @@ export interface ElementsNotificationBanner extends Schema.Component {
   };
 }
 
+export interface ElementsPartners extends Schema.Component {
+  collectionName: 'components_elements_partners';
+  info: {
+    displayName: 'Partners';
+  };
+  attributes: {
+    alt: Attribute.String;
+    logo: Attribute.Media;
+  };
+}
+
 export interface ElementsPlan extends Schema.Component {
   collectionName: 'components_elements_plans';
   info: {
@@ -102,14 +138,13 @@ export interface ElementsPlan extends Schema.Component {
   attributes: {
     name: Attribute.String;
     description: Attribute.Text;
-    isRecommended: Attribute.Boolean;
     price: Attribute.Decimal;
-    pricePeriod: Attribute.String;
     product_features: Attribute.Relation<
       'elements.plan',
       'oneToMany',
       'api::product-feature.product-feature'
     >;
+    honeyPicture: Attribute.Media;
   };
 }
 
@@ -229,7 +264,9 @@ export interface LinksSocialLink extends Schema.Component {
     url: Attribute.String & Attribute.Required;
     newTab: Attribute.Boolean & Attribute.DefaultTo<false>;
     text: Attribute.String & Attribute.Required;
-    social: Attribute.Enumeration<['YOUTUBE', 'TWITTER', 'DISCORD', 'WEBSITE']>;
+    social: Attribute.Enumeration<
+      ['EMAIL', 'INSTAGTAM', 'WHATSAPP', 'LINKEDIN']
+    >;
   };
 }
 
@@ -259,6 +296,17 @@ export interface SectionsBottomActions extends Schema.Component {
     title: Attribute.String;
     buttons: Attribute.Component<'links.button-link', true>;
     description: Attribute.Text;
+  };
+}
+
+export interface SectionsDescriptions extends Schema.Component {
+  collectionName: 'components_sections_descriptions';
+  info: {
+    displayName: 'descriptions';
+    icon: 'collapse';
+  };
+  attributes: {
+    mission: Attribute.Component<'shared.media', true>;
   };
 }
 
@@ -358,16 +406,41 @@ export interface SectionsLeadForm extends Schema.Component {
   };
 }
 
+export interface SectionsMissionVision extends Schema.Component {
+  collectionName: 'components_sections_mission_visions';
+  info: {
+    displayName: 'mission-vision';
+    icon: 'cube';
+    description: '';
+  };
+  attributes: {
+    section: Attribute.Component<'elements.mission-vision', true>;
+  };
+}
+
+export interface SectionsPartners extends Schema.Component {
+  collectionName: 'components_sections_partners';
+  info: {
+    displayName: 'Partners';
+  };
+  attributes: {
+    partners: Attribute.Component<'elements.partners', true>;
+  };
+}
+
 export interface SectionsPricing extends Schema.Component {
   collectionName: 'components_sections_pricings';
   info: {
     name: 'Pricing';
-    displayName: 'Pricing';
+    displayName: 'Our Products';
     icon: 'dollar-sign';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
     plans: Attribute.Component<'elements.plan', true>;
+    description: Attribute.Text;
+    button: Attribute.Component<'links.button-link', true>;
   };
 }
 
@@ -407,6 +480,8 @@ export interface SharedMedia extends Schema.Component {
   };
   attributes: {
     file: Attribute.Media;
+    description: Attribute.Text;
+    name: Attribute.String;
   };
 }
 
@@ -481,8 +556,11 @@ declare module '@strapi/types' {
       'elements.feature-row': ElementsFeatureRow;
       'elements.feature': ElementsFeature;
       'elements.footer-section': ElementsFooterSection;
+      'elements.honey-picture': ElementsHoneyPicture;
       'elements.logos': ElementsLogos;
+      'elements.mission-vision': ElementsMissionVision;
       'elements.notification-banner': ElementsNotificationBanner;
+      'elements.partners': ElementsPartners;
       'elements.plan': ElementsPlan;
       'elements.testimonial': ElementsTestimonial;
       'layout.footer': LayoutFooter;
@@ -494,6 +572,7 @@ declare module '@strapi/types' {
       'links.social-link': LinksSocialLink;
       'meta.metadata': MetaMetadata;
       'sections.bottom-actions': SectionsBottomActions;
+      'sections.descriptions': SectionsDescriptions;
       'sections.feature-columns-group': SectionsFeatureColumnsGroup;
       'sections.feature-rows-group': SectionsFeatureRowsGroup;
       'sections.features': SectionsFeatures;
@@ -501,6 +580,8 @@ declare module '@strapi/types' {
       'sections.hero': SectionsHero;
       'sections.large-video': SectionsLargeVideo;
       'sections.lead-form': SectionsLeadForm;
+      'sections.mission-vision': SectionsMissionVision;
+      'sections.partners': SectionsPartners;
       'sections.pricing': SectionsPricing;
       'sections.rich-text': SectionsRichText;
       'sections.testimonials-group': SectionsTestimonialsGroup;

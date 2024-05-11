@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_descriptions",
+  "info": {
+    "displayName": "descriptions",
+    "icon": "collapse"
+  },
+  "options": {},
+  "attributes": {
+    "mission": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.media"
+    }
+  }
+}

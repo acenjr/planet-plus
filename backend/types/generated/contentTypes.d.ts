@@ -930,8 +930,6 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
     description: '';
   };
   options: {
-    increments: true;
-    timestamps: true;
     draftAndPublish: false;
   };
   pluginOptions: {
@@ -1065,7 +1063,19 @@ export interface ApiPagePage extends Schema.CollectionType {
         'sections.pricing',
         'sections.lead-form',
         'sections.features',
-        'sections.heading'
+        'sections.heading',
+        'elements.partners',
+        'elements.testimonial',
+        'sections.partners',
+        'elements.logos',
+        'layout.logo',
+        'links.link',
+        'links.social-link',
+        'links.button-link',
+        'links.button',
+        'elements.honey-picture',
+        'sections.mission-vision',
+        'elements.mission-vision'
       ]
     > &
       Attribute.SetPluginOptions<{
@@ -1126,6 +1136,7 @@ export interface ApiProductFeatureProductFeature extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
+    description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

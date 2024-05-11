@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_sections_mission_visions",
+  "info": {
+    "displayName": "mission-vision",
+    "icon": "cube",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "section": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.mission-vision"
+    }
+  }
+}

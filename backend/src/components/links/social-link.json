@@ -21,10 +21,10 @@
     "social": {
       "type": "enumeration",
       "enum": [
-        "YOUTUBE",
-        "TWITTER",
-        "DISCORD",
-        "WEBSITE"
+        "EMAIL",
+        "INSTAGTAM",
+        "WHATSAPP",
+        "LINKEDIN"
       ]
     }
   }

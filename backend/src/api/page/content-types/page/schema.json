@@ -38,7 +38,19 @@
         "sections.pricing",
         "sections.lead-form",
         "sections.features",
-        "sections.heading"
+        "sections.heading",
+        "elements.partners",
+        "elements.testimonial",
+        "sections.partners",
+        "elements.logos",
+        "layout.logo",
+        "links.link",
+        "links.social-link",
+        "links.button-link",
+        "links.button",
+        "elements.honey-picture",
+        "sections.mission-vision",
+        "elements.mission-vision"
       ],
       "pluginOptions": {
         "i18n": {
